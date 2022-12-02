@@ -47,7 +47,7 @@ Template.search.events({
       console.log(error)
       document.getElementById('error').removeAttribute('hidden');
     }
-    console.log(instance.searchRes.get().length)
+    
     
   }
 });
