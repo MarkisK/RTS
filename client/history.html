@@ -1,6 +1,20 @@
 <template name="history">
   <h1>History</h1>
-  {{#each obj in getHistory}}
-    <div>{{obj.url}}</div>
-  {{/each}}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Prior Request</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      {{#each obj in getHistory}}
+        <tr >
+          {{obj.url}}
+        </tr>
+      {{/each}}
+      </tr>
+    </tbody>
+  </table>
+
 </template>
