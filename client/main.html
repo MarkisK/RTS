@@ -42,9 +42,14 @@
     </div>
     <div id="searchBtn" class="btn btn-sm btn-danger">Search</div>
   </form>
-  <div id="error"></div>
-  {{#each res in searchResults}}
-    <div class="row">{{res.created_at}} {{res.title}} {{res.url}}</div>
-  {{/each}}
+  <div id="error" hidden>Error Try again</div>
+  {{#if getResultSize}}
+    {{#each res in searchResults}}
+      <div class="row">{{res.created_at}} {{res.title}} {{res.url}}</div>
+    {{/each}}
+  {{else}}
+    <div>No Results Found</div>
+  {{/if}}
+  
 </template>
 

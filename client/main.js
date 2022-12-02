@@ -14,17 +14,17 @@ Template.search.onCreated(function() {
   this.counter = new ReactiveVar(0);
 
   Tracker.autorun(()=>{
-    this.searchRes = new ReactiveVar();
+    this.searchRes = new ReactiveVar([]);
   })
   
 });
 
 Template.search.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
   searchResults(){
     return Template.instance().searchRes.get()
+  },
+  getResultSize(){
+    return Template.instance().searchRes.get().length > 0
   }
 });
 
@@ -44,11 +44,10 @@ Template.search.events({
         } 
     })
     } catch (error) {
-      //console.log(error)
-      //document.getElementById('error').value = error.message
-      //console.log(document.getElementById('error').value)
+      console.log(error)
+      document.getElementById('error').removeAttribute('hidden');
     }
-    
+    console.log(instance.searchRes.get().length)
     
   }
 });
