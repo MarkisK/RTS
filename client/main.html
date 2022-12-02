@@ -44,9 +44,26 @@
   </form>
   <div id="error" hidden>Error Try again</div>
   {{#if getResultSize}}
-    {{#each res in searchResults}}
-      <div class="row">{{res.created_at}} {{res.title}} {{res.url}}</div>
-    {{/each}}
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ParentId</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Title</th>
+            <th scope="col">Url</th>
+          </tr>
+        </thead>
+        {{#each res in searchResults}}
+        <tbody>
+          <tr>
+            <th scope="row">{{res.parent_id}}</th>
+            <td>{{res.url}}</td>
+            <td>{{res.title}}</td>
+            <td>@{{res.created_at}}</td>
+          </tr>
+        </tbody>
+        {{/each}}
+      </table>
   {{else}}
     <div>No Results Found</div>
   {{/if}}
