@@ -48,7 +48,7 @@ Template.search.events({
       document.getElementById('error').removeAttribute('hidden');
     }
     
-    
+    console.log(instance.searchRes.get())
   }
 });
 

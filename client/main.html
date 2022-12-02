@@ -47,19 +47,21 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">ParentId</th>
+            <th scope="col">Object ID</th>
             <th scope="col">Url</th>
             <th scope="col">Title</th>
             <th scope="col">Created At</th>
+            <th scope="col">Author</th>
           </tr>
         </thead>
         {{#each res in searchResults}}
         <tbody>
           <tr>
-            <th scope="row">{{res.parent_id}}</th>
+            <th scope="row">{{res.objectID}}</th>
             <td>{{res.url}}</td>
             <td>{{res.title}}</td>
             <td>@{{res.created_at}}</td>
+            <td>@{{res.author}}</td>
           </tr>
         </tbody>
         {{/each}}
